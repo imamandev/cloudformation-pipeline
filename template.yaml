@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Description: CloudFormation Test and Production Pipeline
+
+Parameters:
+  Environment:
+    Type: String
+    Default: test
+    AllowedValues:
+      - test
+      - production
+
+Resources:
+  TestBucket:
+    Type: AWS::S3::Bucket
+
+Outputs:
+  BucketName:
+    Description: S3 Bucket Name
+    Value: !Ref TestBucket
